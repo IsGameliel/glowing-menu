@@ -41,10 +41,9 @@
         }
         .nav-link:hover,
         .nav-link.active {
-            color: #00ff00; /* Default color, will be overridden by specific colors */
+            color: #00ff00;
         }
 
-        /* Specific hover and active states for each icon */
         .nav-link:nth-child(1):hover,
         .nav-link:nth-child(1).active {
             color: #87CEEB; /* Skyblue */
@@ -83,7 +82,7 @@
 
         .nav-link:nth-child(3):hover,
         .nav-link:nth-child(3).active {
-            color: #90EE90; /* Light green */
+            color: #90EE90;
         }
         .nav-link:nth-child(3):hover .glow-beam,
         .nav-link:nth-child(3).active .glow-beam {
@@ -101,7 +100,7 @@
 
         .nav-link:nth-child(4):hover,
         .nav-link:nth-child(4).active {
-            color: #FF69B4; /* Pink */
+            color: #FF69B4;
         }
         .nav-link:nth-child(4):hover .glow-beam,
         .nav-link:nth-child(4).active .glow-beam {
@@ -119,7 +118,7 @@
 
         .nav-link:nth-child(5):hover,
         .nav-link:nth-child(5).active {
-            color: #FFFF00; /* Yellow */
+            color: #FFFF00;
         }
         .nav-link:nth-child(5):hover .glow-beam,
         .nav-link:nth-child(5).active .glow-beam {
@@ -138,10 +137,10 @@
         .nav-link:hover .glow-beam,
         .nav-link.active .glow-beam {
             opacity: 1;
-            height: 30px; /* Height of the shadow effect */
+            height: 30px;
         }
         .glow-beam {
-            width: 20px; /* Width of the shadow beam */
+            width: 20px;
             height: 35px;
             background: linear-gradient(to bottom, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0)); /* Default soft green shadow gradient */
             position: absolute;
@@ -156,7 +155,7 @@
         .nav-link:hover .light,
         .nav-link.active .light {
             background-color: #00ff00;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); /* Default softer shadow for light */
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
         }
         .light {
             width: 25px;
@@ -214,7 +213,7 @@
             link.addEventListener('click', () => {
                 activeLink(link);
             });
-            // Set the second link (heart) as active by default to match the image
+            
             if (index === 1) {
                 activeLink(link);
             }
