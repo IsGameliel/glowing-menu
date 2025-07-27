@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .nav {
+            background-color: #2a2a2a;
+            width: 300px;
+            height: 60px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .nav-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 22px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40px;
+            height: 60px;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover,
+        .nav-link.active {
+            color: #00ff00; /* Default color, will be overridden by specific colors */
+        }
+
+        /* Specific hover and active states for each icon */
+        .nav-link:nth-child(1):hover,
+        .nav-link:nth-child(1).active {
+            color: #87CEEB; /* Skyblue */
+        }
+        .nav-link:nth-child(1):hover .glow-beam,
+        .nav-link:nth-child(1).active .glow-beam {
+            background: linear-gradient(to bottom, rgba(135, 206, 235, 0.3), rgba(135, 206, 235, 0));
+        }
+        .nav-link:nth-child(1):hover .light,
+        .nav-link:nth-child(1).active .light {
+            background-color: #87CEEB;
+            box-shadow: 0 0 15px rgba(135, 206, 235, 0.3);
+        }
+        .nav-link:nth-child(1):hover .glow-effect,
+        .nav-link:nth-child(1).active .glow-effect {
+            background: radial-gradient(circle, rgba(135, 206, 235, 0.2) 0%, rgba(135, 206, 235, 0) 70%);
+        }
+
+        .nav-link:nth-child(2):hover,
+        .nav-link:nth-child(2).active {
+            color: #FF0000; /* Red */
+        }
+        .nav-link:nth-child(2):hover .glow-beam,
+        .nav-link:nth-child(2).active .glow-beam {
+            background: linear-gradient(to bottom, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0));
+        }
+        .nav-link:nth-child(2):hover .light,
+        .nav-link:nth-child(2).active .light {
+            background-color: #FF0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+        .nav-link:nth-child(2):hover .glow-effect,
+        .nav-link:nth-child(2).active .glow-effect {
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 0%, rgba(255, 0, 0, 0) 70%);
+        }
+
+        .nav-link:nth-child(3):hover,
+        .nav-link:nth-child(3).active {
+            color: #90EE90; /* Light green */
+        }
+        .nav-link:nth-child(3):hover .glow-beam,
+        .nav-link:nth-child(3).active .glow-beam {
+            background: linear-gradient(to bottom, rgba(144, 238, 144, 0.3), rgba(144, 238, 144, 0));
+        }
+        .nav-link:nth-child(3):hover .light,
+        .nav-link:nth-child(3).active .light {
+            background-color: #90EE90;
+            box-shadow: 0 0 15px rgba(144, 238, 144, 0.3);
+        }
+        .nav-link:nth-child(3):hover .glow-effect,
+        .nav-link:nth-child(3).active .glow-effect {
+            background: radial-gradient(circle, rgba(144, 238, 144, 0.2) 0%, rgba(144, 238, 144, 0) 70%);
+        }
+
+        .nav-link:nth-child(4):hover,
+        .nav-link:nth-child(4).active {
+            color: #FF69B4; /* Pink */
+        }
+        .nav-link:nth-child(4):hover .glow-beam,
+        .nav-link:nth-child(4).active .glow-beam {
+            background: linear-gradient(to bottom, rgba(255, 105, 180, 0.3), rgba(255, 105, 180, 0));
+        }
+        .nav-link:nth-child(4):hover .light,
+        .nav-link:nth-child(4).active .light {
+            background-color: #FF69B4;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+        }
+        .nav-link:nth-child(4):hover .glow-effect,
+        .nav-link:nth-child(4).active .glow-effect {
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.2) 0%, rgba(255, 105, 180, 0) 70%);
+        }
+
+        .nav-link:nth-child(5):hover,
+        .nav-link:nth-child(5).active {
+            color: #FFFF00; /* Yellow */
+        }
+        .nav-link:nth-child(5):hover .glow-beam,
+        .nav-link:nth-child(5).active .glow-beam {
+            background: linear-gradient(to bottom, rgba(255, 255, 0, 0.3), rgba(255, 255, 0, 0));
+        }
+        .nav-link:nth-child(5):hover .light,
+        .nav-link:nth-child(5).active .light {
+            background-color: #FFFF00;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+        }
+        .nav-link:nth-child(5):hover .glow-effect,
+        .nav-link:nth-child(5).active .glow-effect {
+            background: radial-gradient(circle, rgba(255, 255, 0, 0.2) 0%, rgba(255, 255, 0, 0) 70%);
+        }
+
+        .nav-link:hover .glow-beam,
+        .nav-link.active .glow-beam {
+            opacity: 1;
+            height: 30px; /* Height of the shadow effect */
+        }
+        .glow-beam {
+            width: 20px; /* Width of the shadow beam */
+            height: 35px;
+            background: linear-gradient(to bottom, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0)); /* Default soft green shadow gradient */
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease, height 0.3s ease;
+            filter: blur(5px); /* Add blur for shadow effect */
+            z-index: 1;
+        }
+        .nav-link:hover .light,
+        .nav-link.active .light {
+            background-color: #00ff00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); /* Default softer shadow for light */
+        }
+        .light {
+            width: 25px;
+            height: 4px;
+            background-color: #666;
+            border-radius: 0;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            z-index: 2;
+        }
+        .nav-link:hover .glow-effect,
+        .nav-link.active .glow-effect {
+            opacity: 1;
+        }
+        .glow-effect {
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(0, 255, 0, 0.2) 0%, rgba(0, 255, 0, 0) 70%); /* Default softer glow effect */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#" class="nav-link"><span class="glow-beam"></span><span class="light"></span><span class="glow-effect"></span><i class="fas fa-home"></i></a>
+        <a href="#" class="nav-link"><span class="glow-beam"></span><span class="light"></span><span class="glow-effect"></span><i class="fas fa-heart"></i></a>
+        <a href="#" class="nav-link"><span class="glow-beam"></span><span class="light"></span><span class="glow-effect"></span><i class="fas fa-plus"></i></a>
+        <a href="#" class="nav-link"><span class="glow-beam"></span><span class="light"></span><span class="glow-effect"></span><i class="fas fa-user"></i></a>
+        <a href="#" class="nav-link"><span class="glow-beam"></span><span class="light"></span><span class="glow-effect"></span><i class="fas fa-bell"></i></a>
+    </nav>
+
+    <script>
+        function activeLink(linkActive) {
+            links.forEach(link => {
+                link.classList.remove('active');
+                link.querySelector('.light').classList.remove('active');
+            });
+            linkActive.classList.add('active');
+            linkActive.querySelector('.light').classList.add('active');
+        }
+
+        const links = document.querySelectorAll('.nav-link');
+
+        links.forEach((link, index) => {
+            link.addEventListener('click', () => {
+                activeLink(link);
+            });
+            // Set the second link (heart) as active by default to match the image
+            if (index === 1) {
+                activeLink(link);
+            }
+        });
+    </script>
+</body>
+</html>
