@@ -21,9 +21,12 @@ This project creates a customizable navigation menu with hover and active state 
 - **Font Awesome**: Provides the icons.
 
 ## Installation
-1. Clone the repository or copy the code into a new directory.
+1. Clone the repository from [GitHub](https://github.com/isgameliel/glowing-menu) or copy the code into a new directory.
 2. Ensure you have a web browser to view the output.
 3. Open the `index.html` file in a browser.
+
+## Preview
+Check out the live preview of the menu at [https://isgameliel.github.io/glowing-menu/](https://isgameliel.github.io/glowing-menu/).
 
 ## Usage
 - Hover over any icon to see the glow effect in its respective color.
@@ -74,6 +77,7 @@ The output is a horizontal navigation bar centered on a dark background. Here’
 - `index.html`: Contains the HTML structure with `nav` and `nav-link` elements.
 - `<style>`: Defines the CSS for layout, colors, and effects.
 - `<script>`: JavaScript to manage the active state on click.
+- GitHub Repository: [https://github.com/isgameliel/glowing-menu](https://github.com/isgameliel/glowing-menu)
 
 ## Future Improvements
 - Add animation for the glow effect to enhance interactivity.
